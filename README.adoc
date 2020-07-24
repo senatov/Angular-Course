@@ -1,0 +1,11 @@
+## Angular course drill project.
+
+
+#Just drill.#
+[.lead]
+    Please, don't clone it !
+    You don't need it anymore.
+    It is only for me, just a learn project for online Angular 10 course.#
+
+
+
