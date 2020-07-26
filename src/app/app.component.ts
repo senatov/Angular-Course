@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {COURSES} from '../db-data';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  data = {
-    title: 'Angular Core'
-  };
+  coreCourse = COURSES[0];
+  rxjsCourse = COURSES[1];
+  ngrxCourse = COURSES[2];
 
-  onLogoClicked(): void {
-    alert('Hello, world!');
-  }
-
-  onKeyUp(newTitle: string): void {
-    this.data.title = newTitle;
-  }
 }
