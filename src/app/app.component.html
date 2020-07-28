@@ -5,9 +5,9 @@
 
 
 <div class="courses">
-  <app-course-card [course]="coreCourse" class="course-card"></app-course-card>
-  <app-course-card [course]="rxjsCourse" class="course-card"></app-course-card>
-  <app-course-card [course]="ngrxCourse" class="course-card"></app-course-card>
+  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse" class="course-card"></app-course-card>
+  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse" class="course-card"></app-course-card>
+  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse" class="course-card"></app-course-card>
 </div>
 
 

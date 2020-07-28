@@ -1,13 +1,15 @@
 <div class="app-course-card">
 
-  <div class="course-title">
+  <div class="course-title" class="mat-step-label">
     {{course.description}}
   </div>
-  <img width="300" alt="Angular Logo"  [src]="course.iconUrl">
+  <img width="300" alt="Course Logo"  [src]="course.iconUrl">
 
-  <div class="course-description">
-    {{course.longDescription}}
+  <div class="course-description" class="mat-small">
+     {{course.longDescription}}
   </div>
+
+  <button (click)='onCourseViewed()' class="mat-raised-button">View Course</button>
 
 </div>
 
