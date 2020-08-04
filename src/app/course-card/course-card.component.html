@@ -1,9 +1,16 @@
-<div class="course-card">
+<div class="course-card" *ngIf="course" [ngClass]="cardClasses()">
 
   <div class="course-title" class="mat-slider-thumb-label">
     {{cardIndex + '.  ' + course.description}}
   </div>
-  <img [src]="course.iconUrl" alt="Course Logo" width="300">
+
+  <img width="300" alt="Course Logo"
+       *ngIf="isImageVisible(); else noImage"
+       [src]="course.iconUrl">
+
+  <ng-template #noImage>
+    <p class="mat-step-label">No image is available</p>
+  </ng-template>
 
   <div class="course-description" class="mat-small">
     {{course.longDescription}}

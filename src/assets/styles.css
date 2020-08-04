@@ -18,8 +18,8 @@ course-card {
 
 .course-card .course-description {
   max-width: 360px;
-  margin: 0 auto;
-  margin-top: 15px;
+  color: blueviolet;
+  margin: 15px auto 0;
 }
 
 .course-card img {
@@ -65,7 +65,7 @@ course-card.is-odd {
   background: lightcyan;
   font-size: 14px;
   color: grey;
-  border: 1px solid grey;
+  border: 1px solid #808080;
   border-radius: 4px;
   padding: 2px 3px;
   display: inline;
