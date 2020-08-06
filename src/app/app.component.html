@@ -1,15 +1,26 @@
 <div class="top-menu">
+
   <img class="logo"
        src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<div>
+
+  <div class="courses">
+
+    <course-card *ngFor="let course of courses"
+                 [course]="course">
+
+      <course-image [src]="course.iconUrl"></course-image>
+
+    </course-card>
+
+  </div>
+
+
 </div>
 
 
-<div class="courses">
-  <course-card (courseSelected)="onCourseSelected($event)"
-               *ngFor="let course of courses; index as i;"
-               [cardIndex]="i + 1"
-               [course]="course">
-  </course-card>
-</div>
 
 
