@@ -11,7 +11,9 @@
                  *ngFor="let course of courses; index as i; first as isFirst; last as isLast"
                  [cardIndex]="i + 1"
                  [class.is-first]="isFirst"
-                 [class.is-last]="isLast" [course]="course">
+                 [class.is-last]="isLast"
+                 [course]="course">
+
 
     </course-card>
 
