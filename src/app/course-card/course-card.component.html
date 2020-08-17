@@ -1,13 +1,15 @@
 <div class="course-card">
 
 
-  <div class="course-title">
-    {{course.description}}
-  </div>
-  <img width="300" [alt]="course.description"
-       [src]="course.iconUrl">
+    <div class="course-title">
+        {{course.description}}
+    </div>
+    <img [alt]="course.description" [src]="course.iconUrl"
+         width="300">
 
-  <div class="course-description">
-    {{ course.longDescription}}
-  </div>
+    <div class="course-description">
+        {{ course.longDescription }}
+    </div>
+
+    <button (click)="onCourseViewed()">View Course</button>
 </div>
