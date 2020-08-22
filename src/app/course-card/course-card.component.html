@@ -2,7 +2,7 @@
      class="course-card">
 
 
-    <div class="course-title">
+    <div [ngStyle]="cardStyles()" class="course-title">
         {{  cardIndex + ". " + course.description}}
     </div>
 
@@ -12,7 +12,7 @@
          width="300">
 
     <ng-template #noImage>
-        <p class="mat-step-label">No image is available</p>
+        <p> No image is available</p>
     </ng-template>
 
     <div class="course-description">
