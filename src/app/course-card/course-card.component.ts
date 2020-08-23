@@ -44,9 +44,8 @@ export class CourseCardComponent implements OnInit {
     }
 
     cardStyles() {
-        // tslint:disable-next-line:no-unused-expression
         return {
-            'background-image': 'url(' + this.course.iconUrl + ')'
+            'background-image': 'url(' + this.course.iconUrl + ')',
         };
     }
 }
