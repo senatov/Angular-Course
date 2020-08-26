@@ -2,19 +2,19 @@
 
     <img class="logo"
          src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
-
 </div>
+
+<div>
+    Today is: {{startDate | date:'dd MMMM of yyyy'}}
+</div>
+
 
 <div class="courses">
 
-    <course-card (courseSelected)="onCourseSelected($event)"
-                 *ngFor="let course of courses; index as i; first as isFirst; last as isLast"
-                 [cardIndex]="i + 1"
-                 [class.is-first]="isFirst"
-                 [class.is-last]="isLast"
-                 [course]="course">
-
-
+    <course-card
+            (courseSelected)="onCourseSelected($event)"
+            *ngFor="let course of courses | slice:0: 2 ; index as i;"
+            [cardIndex]="i+1" [course]="course">
     </course-card>
 
 </div>

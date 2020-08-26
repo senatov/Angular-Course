@@ -12,8 +12,9 @@ course-card {
 }
 
 .course-card .course-title {
-  font-size: 27px;
-  font-weight: bold;
+    color: gold;
+    font-size: 27px;
+    font-weight: lighter;
 }
 
 .course-card .course-description {
