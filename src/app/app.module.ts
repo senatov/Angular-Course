@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CourseCardComponent} from './course-card/course-card.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {CdkTableModule} from "@angular/cdk/table";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import {CdkTableModule} from "@angular/cdk/table";
         BrowserModule,
         BrowserAnimationsModule,
         MatExpansionModule,
-        CdkTableModule
+        CdkTableModule,
+        MatCardModule
     ],
     providers: [],
     bootstrap: [AppComponent]

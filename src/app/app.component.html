@@ -1,11 +1,6 @@
 <div class="top-menu">
 
-    <img class="logo"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
-</div>
-
-<div>
-    Today is: {{startDate | date:'dd MMMM of yyyy'}}
+    <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 </div>
 
 
@@ -13,8 +8,12 @@
 
     <course-card
             (courseSelected)="onCourseSelected($event)"
-            *ngFor="let course of courses | slice:0: 2 ; index as i;"
-            [cardIndex]="i+1" [course]="course">
+            [course]="courses[0]">
+    </course-card>
+
+    <course-card
+            (courseSelected)="onCourseSelected($event)"
+            [course]="courses[1]">
     </course-card>
 
 </div>

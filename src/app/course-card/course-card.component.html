@@ -5,14 +5,12 @@
 
 
         <div [ngStyle]="cardStyles()" class="course-title">
-            {{  cardIndex + ". " + course.description}}
+            {{  course.id + ". " + course.description}}
         </div>
 
 
         <img *ngIf="isImageVisible(); else noImage"
-             [src]="course.iconUrl"
-             alt="Course Logo"
-             width="300"
+             [src]="course.iconUrl" alt="Course Logo" width="250"
         >
 
         <ng-template #noImage>
@@ -34,7 +32,6 @@
                 <div *ngSwitchDefault class="category">All levels</div>
             </div>
         </ng-container>
-
 
         <button (click)="onCourseViewed()">View Course</button>
     </div>
