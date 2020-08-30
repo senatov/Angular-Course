@@ -25,7 +25,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        console.log('ContaineruDiv(ngAfterViewInit):', this.card1);
+        console.log('courseImage', this.courseImage);
     }
 
     onCourseSelected(course: Course) {
