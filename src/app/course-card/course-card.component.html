@@ -9,8 +9,8 @@
         </div>
 
 
-        <img *ngIf="isImageVisible(); else noImage"
-             [src]="course.iconUrl" alt="Course Logo" width="250"
+        <img #courseImage *ngIf="isImageVisible(); else noImage"
+             [src]="course.iconUrl" alt="Course Logo" width="300"
         >
 
         <ng-template #noImage>

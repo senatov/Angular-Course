@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {COURSES} from '../db-data';
 import {Course} from './model/course';
 
@@ -9,7 +9,7 @@ import {Course} from './model/course';
     styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
     courses = COURSES;
 
@@ -17,15 +17,19 @@ export class AppComponent {
     card1: ElementRef;
 
 
-    @ViewChild('container')
-    containerDiv: ElementRef;
+    @ViewChild('courseImage')
+    courseImage: ElementRef;
 
 
     constructor() {
-        console.log('ContaineruDiv:', this.card1);
+    }
+
+    ngAfterViewInit() {
+        console.log('ContaineruDiv(ngAfterViewInit):', this.card1);
     }
 
     onCourseSelected(course: Course) {
-        console.log('ContaineruDiv:', this.card1);
     }
+
+
 }
