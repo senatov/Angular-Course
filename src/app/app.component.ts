@@ -12,11 +12,15 @@ export class AppComponent {
 
     courses = COURSES;
 
-    @ViewChild('cardRef')
-    card: CourseCardComponent;
+    @ViewChild('cardRef1')
+    card1: CourseCardComponent;
 
+    @ViewChild('cardRef2')
+    card2: CourseCardComponent;
 
     onCourseSelected(course: Course) {
-        console.log(this.card);
+        console.log('Course_id:', course.id);
+        console.log('card1', this.card1);
+        console.log('card2', this.card2);
     }
 }

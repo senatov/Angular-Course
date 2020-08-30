@@ -9,7 +9,7 @@ exports.getAllCourses = getAllCourses;
 function getCourseById(req, res) {
     var courseId = req.params['id'];
     var courses = Object.values(db_data_1.COURSES);
-    var course = courses.find(function (course) { return course.id == courseId; });
+    var course = courses.find(function (course) { return course.id === courseId; });
     res.status(200).json(course);
 }
 exports.getCourseById = getCourseById;

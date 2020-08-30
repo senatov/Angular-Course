@@ -23,9 +23,6 @@
 
         <ng-container [ngSwitch]="course.category">
             <div class="course-category">
-                <ng-container *ngSwitchCase="'BEGINNER'">
-                    <div class="category">beginner</div>
-                </ng-container>
                 <div *ngSwitchCase="'BEGINNER'" class="category">beginner</div>
                 <div *ngSwitchCase="'INTERMEDIATE'" class="category">intermediate</div>
                 <div *ngSwitchCase="'ADVANCED'" class="category">advanced</div>
