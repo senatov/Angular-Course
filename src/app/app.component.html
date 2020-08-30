@@ -4,7 +4,7 @@
 </div>
 
 
-<div class="courses">
+<div #container class="courses">
     <course-card #cardRef1
                  (courseSelected)="onCourseSelected($event)"
                  [course]="courses[0]">
