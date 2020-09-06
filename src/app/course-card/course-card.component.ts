@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Course} from '../model/course';
-import {CourseImageComponent} from "../course-image/course-image.component";
+import {CourseImageComponent} from '../course-image/course-image.component';
 
 @Component({
     // tslint:disable-next-line:component-selector

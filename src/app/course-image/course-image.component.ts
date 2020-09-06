@@ -8,6 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CourseImageComponent implements OnInit {
 
+
+    // tslint:disable-next-line:no-input-rename
     @Input('src')
     imageUrl: string;
 
@@ -15,6 +17,7 @@ export class CourseImageComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log('img src', this.imageUrl);
     }
 
 }
