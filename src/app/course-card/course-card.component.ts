@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Course} from '../model/course';
+import {CourseImageComponent} from "../course-image/course-image.component";
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -7,7 +8,7 @@ import {Course} from '../model/course';
     templateUrl: './course-card.component.html',
     styleUrls: ['./course-card.component.css']
 })
-export class CourseCardComponent implements OnInit {
+export class CourseCardComponent implements OnInit, AfterViewInit {
 
     @Input()
     course: Course;
@@ -19,10 +20,18 @@ export class CourseCardComponent implements OnInit {
     @Output('courseSelected')
     courseEmitter = new EventEmitter<Course>();
 
+    @ContentChild(CourseImageComponent, {read: ElementRef})
+    image: ElementRef;
+
     constructor() {
     }
 
-    ngOnInit(): void {
+    ngAfterViewInit() {
+        console.log(this.image);
+    }
+
+
+    ngOnInit() {
 
     }
 
@@ -31,7 +40,6 @@ export class CourseCardComponent implements OnInit {
     }
 
     onCourseViewed() {
-        console.log('card component - button clicked!');
         this.courseEmitter.emit(this.course);
     }
 
@@ -49,3 +57,4 @@ export class CourseCardComponent implements OnInit {
         };
     }
 }
+

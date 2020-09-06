@@ -7,11 +7,13 @@ import {CourseCardComponent} from './course-card/course-card.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatCardModule} from '@angular/material/card';
+import {CourseImageComponent} from './course-image/course-image.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        CourseCardComponent
+        CourseCardComponent,
+        CourseImageComponent
     ],
     imports: [
         BrowserModule,
