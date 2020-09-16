@@ -17,7 +17,6 @@ export class CourseImageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('img src', this.imageUrl);
     }
 
 }

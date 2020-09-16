@@ -7,14 +7,13 @@
     <ng-content select="course-image"></ng-content>
     <ng-content select=".course-description"></ng-content>
 
-    <ng-container [ngSwitch]="course.category">
-        <div class="course-category">
-            <div *ngSwitchCase="'BEGINNER'" class="category">Beginner</div>
-            <div *ngSwitchCase="'INTERMEDIATE'" class="category">Intermediate</div>
-            <div *ngSwitchCase="'ADVANCED'" class="category">Advanced</div>
-            <div *ngSwitchDefault class="category">All levels</div>
-        </div>
-    </ng-container>
+    <div [ngSwitch]="course.category" class="course-category">
+        <div *ngSwitchCase="'BEGINNER'" class="category">Beginner</div>
+        <div *ngSwitchCase="'INTERMEDIATE'" class="category">Intermediate</div>
+        <div *ngSwitchCase="'ADVANCED'" class="category">Advanced</div>
+        <div *ngSwitchDefault class="category">All levels</div>
+    </div>
+
 
     <button (click)="onCourseViewed()">View Course</button>
 </div>
