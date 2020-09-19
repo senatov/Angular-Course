@@ -5,6 +5,7 @@
     </div>
 
     <ng-content select="course-image"></ng-content>
+
     <ng-content select=".course-description"></ng-content>
 
     <div [ngSwitch]="course.category" class="course-category">
@@ -13,7 +14,6 @@
         <div *ngSwitchCase="'ADVANCED'" class="category">Advanced</div>
         <div *ngSwitchDefault class="category">All levels</div>
     </div>
-
 
     <button (click)="onCourseViewed()">View Course</button>
 </div>
