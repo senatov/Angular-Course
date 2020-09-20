@@ -1,10 +1,11 @@
 <div #container *ngIf="course" class="course-card">
 
-    <div [ngStyle]="cardStyles()" class="course-title">
+    <div class="course-title">
         {{  course.id + ". " + course.description}}
     </div>
 
-    <ng-content select="course-image"></ng-content>
+    <ng-content *ngIf="course.iconUrl"
+                ;blankImage else select="course-image"></ng-content>
 
     <ng-content select=".course-description"></ng-content>
 
