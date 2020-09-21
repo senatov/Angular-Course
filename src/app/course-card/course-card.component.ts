@@ -1,16 +1,4 @@
-import {
-    AfterContentInit,
-    AfterViewInit,
-    Component,
-    ContentChildren,
-    ElementRef,
-    EventEmitter,
-    Input,
-    OnInit,
-    Output,
-    QueryList,
-    TemplateRef
-} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnInit, Output, QueryList} from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
 
@@ -26,12 +14,8 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     course: Course;
 
     @Input()
-    noImageTpl: TemplateRef<any>;
-
-    @Input()
     cardIndex: number;
 
-    // tslint:disable-next-line:no-output-rename
     @Output('courseSelected')
     courseEmitter = new EventEmitter<Course>();
 
@@ -39,16 +23,19 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     images: QueryList<ElementRef>;
 
     constructor() {
+
     }
 
     ngAfterViewInit() {
+
     }
 
-    ngAfterContentInit(): void {
-        console.log(this.images);
+    ngAfterContentInit() {
+
     }
 
     ngOnInit() {
+
     }
 
     isImageVisible() {
@@ -56,21 +43,23 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     }
 
     onCourseViewed() {
+
         this.courseEmitter.emit(this.course);
+
     }
 
-
     cardClasses() {
-
         if (this.course.category === 'BEGINNER') {
-            return ['beginner'];
+            return 'beginner';
         }
     }
 
     cardStyles() {
         return {
-            'background-image': 'url(' + this.course.iconUrl + ')',
+            'background-image': 'url(' + this.course.iconUrl + ')'
+
         };
     }
-}
 
+
+}
