@@ -1,4 +1,16 @@
-import {AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnInit, Output, QueryList} from '@angular/core';
+import {
+    AfterContentInit,
+    AfterViewInit,
+    Component,
+    ContentChildren,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    QueryList,
+    TemplateRef
+} from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
 
@@ -14,6 +26,9 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     course: Course;
 
     @Input()
+    noImageTpl: TemplateRef<any>;
+
+    @Input()
     cardIndex: number;
 
     // tslint:disable-next-line:no-output-rename
@@ -21,7 +36,7 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     courseEmitter = new EventEmitter<Course>();
 
     @ContentChildren(CourseImageComponent, {read: ElementRef})
-    images: QueryList<CourseImageComponent>;
+    images: QueryList<ElementRef>;
 
     constructor() {
     }
@@ -34,7 +49,6 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     }
 
     ngOnInit() {
-
     }
 
     isImageVisible() {
