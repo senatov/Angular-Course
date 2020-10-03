@@ -7,7 +7,7 @@ import {Directive} from '@angular/core';
 export class HighlightedDirective {
 
     constructor() {
-        console.log('directive created!!!');
+        console.log('directive created..');
 
     }
 
