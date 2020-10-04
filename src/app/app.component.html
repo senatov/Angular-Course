@@ -6,9 +6,10 @@
 
 <div *ngIf="courses[0] as course" class="courses">
 
-    <course-card
-            (courseSelected)="onCourseSelected($event)"
-            [course]="course">
+    <course-card (courseSelected)="onCourseSelected($event)"
+                 (toggleHighlight)="onToggle($event)"
+                 [course]="course"
+                 highlighted>
 
         <course-image [src]="course.iconUrl"></course-image>
 
