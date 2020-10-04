@@ -24,11 +24,10 @@ export class AppComponent implements AfterViewInit {
     }
 
     onToggle(isHighLighled: boolean) {
-        console.log(this.highLighled);
+        console.log(isHighLighled);
     }
 
     ngAfterViewInit() {
-        console.log(this.highLighled);
     }
 
     onCourseSelected(course: Course) {

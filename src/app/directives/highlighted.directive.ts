@@ -1,5 +1,5 @@
-import {Directive, HostBinding, HostListener, Input, Output} from '@angular/core';
-import {EventEmitter} from 'events';
+import {Directive, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
+
 
 @Directive({
     // tslint:disable-next-line:directive-selector
