@@ -1,4 +1,4 @@
-import {Directive, HostBinding, HostListener, Input} from '@angular/core';
+import {Directive, HostBinding, HostListener, Input, Output} from '@angular/core';
 import {EventEmitter} from 'events';
 
 @Directive({
@@ -10,6 +10,7 @@ export class HighlightedDirective {
     @Input('highlighted')
     isHighlighted = false;
 
+    @Output()
     toggleHighlight = new EventEmitter();
 
     constructor() {
@@ -26,10 +27,12 @@ export class HighlightedDirective {
     mouseover($event) {
         console.log($event);
         this.isHighlighted = true;
+        this.toggleHighlight.emit(this.isHighlighted);
     }
 
     @HostListener('mouseleave')
     mouselive() {
         this.isHighlighted = false;
+        this.toggleHighlight.emit(this.isHighlighted);
     }
 }
