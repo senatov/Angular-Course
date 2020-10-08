@@ -3,7 +3,8 @@ import {Directive, EventEmitter, HostBinding, HostListener, Input, Output} from 
 
 @Directive({
     // tslint:disable-next-line:directive-selector
-    selector: '[highlighted]'
+    selector: '[highlighted]',
+    exportAs: 'hl'
 })
 export class HighlightedDirective {
 
@@ -33,6 +34,12 @@ export class HighlightedDirective {
     @HostListener('mouseleave')
     mouselive() {
         this.isHighlighted = false;
+        this.toggleHighlight.emit(this.isHighlighted);
+    }
+
+
+    toggle() {
+        this.isHighlighted = !this.isHighlighted;
         this.toggleHighlight.emit(this.isHighlighted);
     }
 }
