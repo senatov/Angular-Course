@@ -13,8 +13,9 @@ export class AppComponent implements AfterViewInit {
 
     courses = COURSES;
 
-    @ViewChild(CourseCardComponent)
+    @ViewChild(CourseCardComponent, {read: HighlightedDirective})
     highLighled: HighlightedDirective;
+
 
     @ViewChildren(CourseCardComponent, {read: ElementRef})
     cards: QueryList<ElementRef>;
@@ -28,6 +29,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
+        console.log(this.highLighled);
     }
 
     onCourseSelected(course: Course) {
