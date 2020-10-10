@@ -12,7 +12,7 @@
                  [course]="course"
     >
 
-        <course-image [src]="course.iconUrl"></course-image>
+        <course-image *ngUnless="false" [src]="course.iconUrl"></course-image>
 
         <div (dblclick)="highlighter.toggle()"
              class="course-description">
