@@ -12,7 +12,11 @@
                      [course]="course"
                      highlighted>
 
-            <course-image [src]="course.iconUrl"></course-image>
+
+            <course-image *ngxUnless="!course.iconUrl"
+                          [src]="course.iconUrl">
+            </course-image>
+
 
             <div (dblclick)="highlighter.toggle()"
                  class="course-description">
