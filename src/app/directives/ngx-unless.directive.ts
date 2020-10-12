@@ -20,6 +20,8 @@ export class NgxUnlessDirective {
         } else if (condition && this.visible) {
             this.viewContainer.clear();
             this.visible = false;
+        } else {
+            console.log('eror');
         }
 
     }
