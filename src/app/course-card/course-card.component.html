@@ -1,4 +1,3 @@
-
 <div #container *ngIf="course" class="course-card">
 
     <div class="course-title">
@@ -11,7 +10,7 @@
     <ng-template #noImage>
 
         <ng-container
-                *ngTemplateOutlet="noImageTpl;context: {description:course.description}">
+                *ngTemplateOutlet="noImage;context: {description:course.description}">
 
         </ng-container>
 

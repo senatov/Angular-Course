@@ -3,20 +3,23 @@
          src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 </div>
 
+<div class="course-card">
+    Test Card
+</div>
+
+
 <ng-template [ngIf]="courses[0]" let-course>
 
-    <div class="courses">
+    <div class="courses salmon-theme">
 
         <course-card #highlighter="hl"
                      (courseSelected)="onCourseSelected($event)" (toggleHighlight)="onToggle($event)"
                      [course]="course"
                      highlighted>
 
-
             <course-image *ngxUnless="!course.iconUrl"
                           [src]="course.iconUrl">
             </course-image>
-
 
             <div (dblclick)="highlighter.toggle()"
                  class="course-description">
