@@ -1,14 +1,25 @@
-import {AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnInit, Output, QueryList} from '@angular/core';
+import {
+    AfterContentInit,
+    AfterViewInit,
+    Component,
+    ContentChildren,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    QueryList,
+    ViewEncapsulation
+} from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
 
 @Component({
-    // tslint:disable-next-line:component-selector
     selector: 'course-card',
     templateUrl: './course-card.component.html',
     styleUrls: ['./course-card.component.css']
 })
-export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentInit {
+export class CourseCardComponent implements OnInit {
 
     @Input()
     course: Course;
@@ -16,21 +27,11 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     @Input()
     cardIndex: number;
 
-    @Output('courseSelected')
+    @Output('courseChanged')
     courseEmitter = new EventEmitter<Course>();
 
-    @ContentChildren(CourseImageComponent, {read: ElementRef})
-    images: QueryList<ElementRef>;
 
     constructor() {
-
-    }
-
-    ngAfterViewInit() {
-
-    }
-
-    ngAfterContentInit() {
 
     }
 
@@ -38,28 +39,14 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
 
     }
 
-    isImageVisible() {
-        return this.course && this.course.iconUrl;
-    }
 
-    onCourseViewed() {
+    onSaveClicked(description:string) {
 
-        this.courseEmitter.emit(this.course);
+        this.courseEmitter.emit({...this.course, description});
 
     }
 
-    cardClasses() {
-        if (this.course.category === 'BEGINNER') {
-            return 'beginner';
-        }
-    }
 
-    cardStyles() {
-        return {
-            'background-image': 'url(' + this.course.iconUrl + ')'
-
-        };
-    }
 
 
 }

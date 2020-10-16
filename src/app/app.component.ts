@@ -1,39 +1,27 @@
-import {AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {COURSES} from '../db-data';
 import {Course} from './model/course';
 import {CourseCardComponent} from './course-card/course-card.component';
 import {HighlightedDirective} from './directives/highlighted.directive';
+import {Observable} from 'rxjs';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
-
-    courses = COURSES;
-
-    @ViewChild(CourseCardComponent, {read: HighlightedDirective})
-    highLighled: HighlightedDirective;
+export class AppComponent implements OnInit {
 
 
-    @ViewChildren(CourseCardComponent, {read: ElementRef})
-    cards: QueryList<ElementRef>;
+  courses = COURSES;
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+  }
 
 
-    constructor() {
-    }
-
-    onToggle(isHighLighled: boolean) {
-        console.log(isHighLighled);
-    }
-
-    ngAfterViewInit() {
-        console.log(this.highLighled);
-    }
-
-    onCourseSelected(course: Course) {
-
-    }
 
 }

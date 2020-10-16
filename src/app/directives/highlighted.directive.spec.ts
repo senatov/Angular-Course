@@ -1,4 +1,4 @@
-import {HighlightedDirective} from './highlighted.directive';
+import { HighlightedDirective } from './highlighted.directive';
 
 describe('HighlightedDirective', () => {
   it('should create an instance', () => {

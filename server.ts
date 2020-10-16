@@ -1,5 +1,7 @@
+
+
 import * as express from 'express';
-import {Application} from 'express';
+import {Application} from "express";
 import {getAllCourses} from './server/get-courses.route';
 import {saveCourse} from './server/save-course.route';
 

@@ -1,8 +1,6 @@
 import {Directive, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
 
-
 @Directive({
-    // tslint:disable-next-line:directive-selector
     selector: '[highlighted]',
     exportAs: 'hl'
 })
@@ -15,7 +13,8 @@ export class HighlightedDirective {
     toggleHighlight = new EventEmitter();
 
     constructor() {
-        console.log('directive created..');
+
+        console.log('Directive created..');
 
     }
 
@@ -25,21 +24,25 @@ export class HighlightedDirective {
     }
 
     @HostListener('mouseover', ['$event'])
-    mouseover($event) {
+    mouseOver($event) {
+
         console.log($event);
+
         this.isHighlighted = true;
         this.toggleHighlight.emit(this.isHighlighted);
     }
 
     @HostListener('mouseleave')
-    mouselive() {
+    mouseLeave() {
         this.isHighlighted = false;
         this.toggleHighlight.emit(this.isHighlighted);
     }
-
 
     toggle() {
         this.isHighlighted = !this.isHighlighted;
         this.toggleHighlight.emit(this.isHighlighted);
     }
+
+
+
 }
