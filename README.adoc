@@ -5,7 +5,9 @@
 [.lead]
     Please, don't clone it !
     You don't need it anymore.
-    It is only for me, just a learn project for online Angular 10 course.#
+    It is only for me, just a learn project for online Angular 10 course.
+    
+    Full courses are here: https://angular-university.io/course/angular-course
 
 
 
