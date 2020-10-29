@@ -1,11 +1,11 @@
-<div class="course-card" *ngIf="course" #container>
+<div #container *ngIf="course" class="course-card">
 
     <div class="course-title">
         {{ cardIndex || '' + ' ' + course.description }}
     </div>
 
-    <ng-content select="course-image"
-                *ngIf="course.iconUrl"></ng-content>
+    <ng-content *ngIf="course.iconUrl"
+                select="course-image"></ng-content>
 
     <div class="mat-tab-nav-bar">
         {{course.longDescription}}
@@ -15,13 +15,13 @@
         Edit Title: <input #courseTitle [value]="course.description">
     </div>
 
-    <div class="course-category" [ngSwitch]="course.category">
+    <div [ngSwitch]="course.category" class="course-category">
 
-        <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+        <div *ngSwitchCase="'BEGINNER'" class="category">Beginner</div>
 
-        <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+        <div *ngSwitchCase="'INTERMEDIATE'" class="category">Intermediate</div>
 
-        <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+        <div *ngSwitchCase="'ADVANCED'" class="category">Advanced</div>
 
     </div>
 

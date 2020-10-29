@@ -1,19 +1,8 @@
-import {
-    AfterContentInit,
-    AfterViewInit,
-    Component,
-    ContentChildren,
-    ElementRef,
-    EventEmitter,
-    Input,
-    OnInit,
-    Output,
-    QueryList,
-    ViewEncapsulation
-} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {Course} from '../model/course';
-import {CourseImageComponent} from '../course-image/course-image.component';
 import {CoursesService} from '../services/courses.service';
+import {COURSES_SERVICE} from '../app.component';
+
 
 @Component({
     selector: 'course-card',
@@ -32,7 +21,7 @@ export class CourseCardComponent implements OnInit {
     courseEmitter = new EventEmitter<Course>();
 
 
-    constructor(private coursesService: CoursesService) {
+    constructor(@Inject(COURSES_SERVICE) private coursesService: CoursesService) {
 
     }
 
@@ -41,13 +30,11 @@ export class CourseCardComponent implements OnInit {
     }
 
 
-    onSaveClicked(description:string) {
+    onSaveClicked(description: string) {
 
         this.courseEmitter.emit({...this.course, description});
 
     }
-
-
 
 
 }

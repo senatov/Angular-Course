@@ -1,3 +1,6 @@
+.html {
+    scroll-behavior: smooth;
+}
 
 .top-menu {
     background: #1976d2;
@@ -5,7 +8,7 @@
 }
 
 .logo {
-  max-height: 55px;
+    max-height: 55px;
 }
 
 
