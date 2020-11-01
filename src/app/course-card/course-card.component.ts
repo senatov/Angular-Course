@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Course} from '../model/course';
 import {CoursesService} from '../services/courses.service';
 
+let counter = 0;
 
 @Component({
     selector: 'course-card',
@@ -9,6 +10,8 @@ import {CoursesService} from '../services/courses.service';
     styleUrls: ['./course-card.component.css']
 })
 export class CourseCardComponent implements OnInit {
+
+    id: number;
 
     @Input()
     course: Course;
@@ -21,7 +24,8 @@ export class CourseCardComponent implements OnInit {
 
 
     constructor(private coursesService: CoursesService) {
-
+        counter++;
+        this.id = counter;
     }
 
     ngOnInit() {
