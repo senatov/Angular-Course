@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Course} from './model/course';
 import {CoursesService} from './services/courses.service';
+import {APP_CONFIG, AppConfig, CONFIG_TOKEN} from './config';
 
 @Component({
     selector: 'app-root',
@@ -13,9 +14,9 @@ export class AppComponent implements OnInit {
 
     courses$: Observable<Course[]>;
 
-    constructor(private courseService: CoursesService) {
-        console.log("root component " +  this.courseService.id);
-
+    constructor(private courseService: CoursesService,
+                @Inject(CONFIG_TOKEN) private config: AppConfig) {
+        console.log('Configuration obj: ' + config);
     }
 
     ngOnInit() {
