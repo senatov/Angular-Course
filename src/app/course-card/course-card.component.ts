@@ -7,7 +7,10 @@ let counter = 0;
 @Component({
     selector: 'course-card',
     templateUrl: './course-card.component.html',
-    styleUrls: ['./course-card.component.css']
+    styleUrls: ['./course-card.component.css'],
+    providers: [
+        CoursesService
+    ]
 })
 export class CourseCardComponent implements OnInit {
 
@@ -38,5 +41,8 @@ export class CourseCardComponent implements OnInit {
 
     }
 
-
+    onTitleChanged(value: string) {
+        console.log("title changed on: " + value);
+        this.course.description = value;
+    }
 }
