@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
     courses = COURSES;
 
-    courses$: Observable<Course[]>;
 
     constructor(private courseService: CoursesService,
                 @Inject(CONFIG_TOKEN) private config: AppConfig) {
@@ -25,10 +24,19 @@ export class AppComponent implements OnInit {
 
     }
 
+
+    onEditCourse() {
+        const course = this.courses[0];
+        const newCourse = {...course};
+        newCourse.description = 'new value';
+        this.courses[0] = newCourse;
+    }
+
     save(course: Course) {
         this.courseService.saveCourse(course)
             .subscribe(
                 () => console.log('Course saved!')
             );
     }
+
 }

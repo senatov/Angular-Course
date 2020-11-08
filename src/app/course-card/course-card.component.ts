@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Course} from '../model/course';
 import {CoursesService} from '../services/courses.service';
 
@@ -8,9 +8,7 @@ let counter = 0;
     selector: 'course-card',
     templateUrl: './course-card.component.html',
     styleUrls: ['./course-card.component.css'],
-    providers: [
-        CoursesService
-    ]
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseCardComponent implements OnInit {
 
@@ -41,8 +39,8 @@ export class CourseCardComponent implements OnInit {
 
     }
 
-    onTitleChanged(value: string) {
-        console.log("title changed on: " + value);
-        this.course.description = value;
+    onTitleChanged(newTitle: string) {
+        console.log("title changed on: " + newTitle);
+        this.course.description = newTitle;
     }
 }
