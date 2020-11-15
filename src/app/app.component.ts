@@ -1,42 +1,40 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {AppConfig, CONFIG_TOKEN} from './config';
 import {Course} from './model/course';
 import {CoursesService} from './services/courses.service';
-import {AppConfig, CONFIG_TOKEN} from './config';
-import {COURSES} from '../db-data';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class AppComponent implements OnInit {
 
-    courses = COURSES;
+  courses: Course[];
+
+  constructor(private courseService: CoursesService,
+              @Inject(CONFIG_TOKEN) private config: AppConfig,
+              private cd: ChangeDetectorRef) {
+  }
+
+  ngOnInit() {
+    this.courseService.loadCourses().subscribe(courses =>{
+      this.courses = courses;
+      this.cd.markForCheck();
+    });
+  }
 
 
-    constructor(private courseService: CoursesService,
-                @Inject(CONFIG_TOKEN) private config: AppConfig) {
-    }
+  onEditCourse() {
+  }
 
-    ngOnInit() {
-
-    }
-
-
-    onEditCourse() {
-        const course = this.courses[0];
-        const newCourse = {...course};
-        newCourse.description = 'new value';
-        this.courses[0] = newCourse;
-    }
-
-    save(course: Course) {
-        this.courseService.saveCourse(course)
-            .subscribe(
-                () => console.log('Course saved!')
-            );
-    }
+  save(course: Course) {
+    this.courseService.saveCourse(course)
+      .subscribe(
+        () => console.log('Course saved!')
+      );
+  }
 
 }
