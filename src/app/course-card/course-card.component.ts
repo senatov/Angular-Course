@@ -1,4 +1,4 @@
-import {Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Attribute, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Course} from '../model/course';
 import {CoursesService} from '../services/courses.service';
 
@@ -10,7 +10,7 @@ let counter = 0;
   styleUrls: ['./course-card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CourseCardComponent implements OnInit {
+export class CourseCardComponent implements OnInit, OnDestroy {
 
   @Input()
   course: Course;
@@ -25,13 +25,21 @@ export class CourseCardComponent implements OnInit {
 
 
   constructor(private coursesService: CoursesService,
-              @Attribute('type') private attrType: string,
-              private cd: ChangeDetectorRef) {
+              @Attribute('type') private attrType: string) {
 
-    console.log('attrType:=' + attrType);
+    console.log("constructor:", this);
   }
 
   ngOnInit() {
+    console.log("ngOnInit():");
+  }
+
+  ngOnDestroy(): void {
+    console.log("ngOnDestroy()");
+  }
+
+  onTitleChanged(newTitle: string) {
+    this.course.description = newTitle;
   }
 
 
@@ -41,8 +49,5 @@ export class CourseCardComponent implements OnInit {
 
   }
 
-  onTitleChanged(newTitle: string) {
-    console.log("title changed on: " + newTitle);
-    this.course.description = newTitle;
-  }
+
 }

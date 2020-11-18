@@ -1,4 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
+import {COURSES} from "../db-data";
 import {AppConfig, CONFIG_TOKEN} from './config';
 import {Course} from './model/course';
 import {CoursesService} from './services/courses.service';
@@ -11,7 +12,7 @@ import {CoursesService} from './services/courses.service';
 
 export class AppComponent implements OnInit {
 
-  courses: Course[];
+  courses: Course[] = COURSES;
 
   constructor(private courseService: CoursesService,
               @Inject(CONFIG_TOKEN) private config: AppConfig) {
