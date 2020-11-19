@@ -25,13 +25,13 @@ export class CourseCardComponent implements OnInit, OnDestroy {
 
 
   constructor(private coursesService: CoursesService,
-              @Attribute('type') private attrType: string) {
+              @Attribute('type') private type: string) {
 
-    console.log("constructor:", this);
+    console.log("constructor:", this.course);
   }
 
   ngOnInit() {
-    console.log("ngOnInit():");
+    console.log("ngOnInit():", this.course);
   }
 
   ngOnDestroy(): void {

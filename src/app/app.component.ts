@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
 
 
   onEditCourse() {
+    this.courses = [undefined];
   }
 
   save(course: Course) {
