@@ -5,36 +5,41 @@ import {Course} from './model/course';
 import {CoursesService} from './services/courses.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent implements OnInit {
 
-  courses: Course[] = COURSES;
+    courses: Course[] = COURSES;
 
-  constructor(private courseService: CoursesService,
-              @Inject(CONFIG_TOKEN) private config: AppConfig) {
-  }
-
-
-  ngOnInit() {
-    this.courseService.loadCourses().subscribe(courses => {
-      this.courses = courses;
-    });
-  }
+    constructor(private courseService: CoursesService,
+                @Inject(CONFIG_TOKEN) private config: AppConfig) {
+    }
 
 
-  onEditCourse() {
-    this.courses = [undefined];
-  }
+    ngOnInit() {
+        this.courseService.loadCourses().subscribe(courses => {
+            this.courses = courses;
+        });
+    }
 
-  save(course: Course) {
-    this.courseService.saveCourse(course)
-      .subscribe(
-        () => console.log('Course saved!')
-      );
-  }
+
+    onEditCourse() {
+        const course = this.courses[0];
+        const newCourse = {
+            ...course,
+            description: 'onChanges'
+        };
+        this.courses[0] = newCourse;
+    }
+
+    save(course: Course) {
+        this.courseService.saveCourse(course)
+            .subscribe(
+                () => console.log('Course saved!')
+            );
+    }
 
 }
