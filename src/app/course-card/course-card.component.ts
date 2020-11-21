@@ -1,9 +1,9 @@
 import {
-    AfterContentChecked,
-    AfterViewChecked,
+    AfterContentChecked, AfterContentInit,
+    AfterViewChecked, AfterViewInit,
     Attribute,
     ChangeDetectionStrategy,
-    Component,
+    Component, DoCheck,
     EventEmitter,
     Input,
     OnChanges,
@@ -22,7 +22,9 @@ let counter = 0;
     styleUrls: ['./course-card.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CourseCardComponent implements OnInit, OnDestroy, OnChanges, AfterContentChecked, AfterViewChecked {
+export class CourseCardComponent implements OnInit, OnDestroy, OnChanges,
+    AfterContentChecked, AfterViewChecked,
+    AfterContentInit, AfterViewInit, DoCheck {
 
     @Input()
     course: Course;
@@ -42,12 +44,24 @@ export class CourseCardComponent implements OnInit, OnDestroy, OnChanges, AfterC
         console.log('constructor:', this.course);
     }
 
+    ngDoCheck(): void {
+        console.log('ngDoCheck():');
+    }
+
+    ngAfterViewInit(): void {
+        console.log('ngAfterViewInit():');
+    }
+
+    ngAfterContentInit(): void {
+        console.log('ngAfterViewInit():');
+    }
+
     ngAfterViewChecked(): void {
-        console.log('ngAfterViewChecked():', this.course);
+        console.log('ngAfterViewChecked():');
     }
 
     ngAfterContentChecked(): void {
-        console.log('ngAfterContentChecked():', this.course);
+        console.log('ngAfterContentChecked():');
         this.course.description = 'ngAfterContentChecked';
         this.course.category = 'ADVANCED';
     }
@@ -55,7 +69,7 @@ export class CourseCardComponent implements OnInit, OnDestroy, OnChanges, AfterC
     ngOnChanges(changes): void {
         console.log('ngOnChanges():', changes);
         this.course.description = 'ngAfterViewChecked';
-        //this.course.iconUrl='https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1bbesG.img?h=174&w=300&m=6&q=60&u=t&o=t&l=f&f=jpg&x=1011&y=778';
+        this.course.iconUrl='https://static3.die-tagespost.de/storage/image/2/0/9/5/65902_teaser-320x180_1vJC2g_198xVp.jpg';
     }
 
     ngOnInit() {
