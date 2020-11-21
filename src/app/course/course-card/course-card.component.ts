@@ -11,8 +11,8 @@ import {
     OnInit,
     Output
 } from '@angular/core';
-import {Course} from '../model/course';
-import {CoursesService} from '../services/courses.service';
+import {Course} from '../../model/course';
+import {CoursesService} from '../../services/courses.service';
 
 let counter = 0;
 
