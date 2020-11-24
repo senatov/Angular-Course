@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {COURSES} from "../db-data";
 import {AppConfig, CONFIG_TOKEN} from './config';
 import {Course} from './model/course';
-import {CoursesService} from './services/courses.service';
+import {CoursesService} from './courses/courses.service';
 
 @Component({
     selector: 'app-root',

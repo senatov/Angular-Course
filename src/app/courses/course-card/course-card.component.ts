@@ -1,9 +1,12 @@
 import {
-    AfterContentChecked, AfterContentInit,
-    AfterViewChecked, AfterViewInit,
+    AfterContentChecked,
+    AfterContentInit,
+    AfterViewChecked,
+    AfterViewInit,
     Attribute,
     ChangeDetectionStrategy,
-    Component, DoCheck,
+    Component,
+    DoCheck,
     EventEmitter,
     Input,
     OnChanges,
@@ -11,10 +14,9 @@ import {
     OnInit,
     Output
 } from '@angular/core';
-import {Course} from '../model/course';
-import {CoursesService} from '../services/courses.service';
+import {Course} from '../../model/course';
+import {CoursesService} from '../courses.service';
 
-let counter = 0;
 
 @Component({
     selector: 'course-card',
@@ -69,7 +71,7 @@ export class CourseCardComponent implements OnInit, OnDestroy, OnChanges,
     ngOnChanges(changes): void {
         console.log('ngOnChanges():', changes);
         this.course.description = 'ngAfterViewChecked';
-        this.course.iconUrl='https://static3.die-tagespost.de/storage/image/2/0/9/5/65902_teaser-320x180_1vJC2g_198xVp.jpg';
+        this.course.iconUrl = 'https://static3.die-tagespost.de/storage/image/2/0/9/5/65902_teaser-320x180_1vJC2g_198xVp.jpg';
     }
 
     ngOnInit() {
@@ -90,7 +92,5 @@ export class CourseCardComponent implements OnInit, OnDestroy, OnChanges,
         this.courseEmitter.emit({...this.course, description});
 
     }
-
-
 }
 
