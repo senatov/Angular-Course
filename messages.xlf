@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="756b2b2744938130877e47fd8e697024cb532092" datatype="html">
+        <source>Edit Course</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6e8f8ea677e9317b07814648e60227620a861c92" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {No courses available,} =1 {Only 1 course available,} other {A total of <x id="INTERPOLATION"/> are available}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6b79d25db7d4a9d0a0853dccd7a5c930fdf9f488" datatype="html">
+        <source><x id="ICU" equiv-text="div i18n&gt;{coursesTotal, plural, =0 {No courses available,}
+                =1 {Only 1 course available,}
+                other {A total of {{coursesTotal}} are a"/> } </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomeMsg1" datatype="html">
+        <source>Welcome to the Angular Code Deep Dive course</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Greet the User</note>
+        <note priority="1" from="meaning">Welcome</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -47,35 +47,27 @@ export class CourseCardComponent implements OnInit, OnDestroy, OnChanges,
     }
 
     ngDoCheck(): void {
-        console.log('ngDoCheck():');
     }
 
     ngAfterViewInit(): void {
-        console.log('ngAfterViewInit():');
     }
 
     ngAfterContentInit(): void {
-        console.log('ngAfterViewInit():');
     }
 
     ngAfterViewChecked(): void {
-        console.log('ngAfterViewChecked():');
     }
 
     ngAfterContentChecked(): void {
-        console.log('ngAfterContentChecked():');
     }
 
     ngOnChanges(changes): void {
-        console.log('ngOnChanges():', changes);
     }
 
     ngOnInit() {
-        console.log('ngOnInit():', this.course);
     }
 
     ngOnDestroy(): void {
-        console.log('ngOnDestroy()');
     }
 
     onTitleChanged(newTitle: string) {
